@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img class="logo-alura" src="./assets/logo-alura.png" alt="logo-alura">
+    </header>
+    <main>    
+        <section class="bloco-criptografia">
+            
+            <div class="text-area">    
+                <textarea class="mensagemEntrada" type="text" required rows="9"></textarea>   
+                <span>Digite seu texto aqui</span>
+            </div>
+    
+            <div class="informacao">
+                <h5 class="aviso">* Apenas letras minúsculas e sem acento</h5>
+            </div>
+
+            <div class="botoes">
+                <button onclick="btnCriptografar()" class="btn-criptografar">Criptografar</button>
+                <button onclick="btnDescriptografar()" class="btn-descriptografar">Descriptografar</button>
+            </div>
+        </section>
+    
+        <section class="bloco-mensagem">
+            <div class="msg-nao-encontrada">
+                <img class="img-boneco" src="./assets/nenhuma-msg-encontrada.svg">
+                <br>
+                <div class="msg-texto">
+                    <h6 class="nenhuma-msg-encontrada">Nenhuma mensagem encontrada</h6>
+                    <br>
+                    <p class="digite-msg">Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
+            </div>
+            <div class="contem-mensagem" style="display: none;">
+                <textarea type="text" cols="20" rows="18" class="mensagemSaida" disabled></textarea>
+                <button onclick="btnCopiar()" class="btn-copiar">Copiar</button>
+            </div>
+        </section>    
+    </main>
+
+    <footer class="rodape">
+        <p>Copyright © 2024 Yasmina Andrade. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js" defer></script>   
+</body>
+</html>
