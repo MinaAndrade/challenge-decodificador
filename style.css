@@ -7,52 +7,71 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    line-height: 150%;
+    
 }
+
+header {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+}
+
+.logo-alura {
+    height: 4em;
+    padding: 0.5em;
+    margin-left: 1em;
+}
+
 
 main {
     border: none;
     color: #0A3871;
-    margin-top: 1.5em;
     display: flex;
-    justify-content: center;
-    gap: 2.5em;
-    margin-left: 5em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-left: 2em;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.logo-alura {
-    height: 5em;
-    padding: 0.5em;
-}
 
 body {
     width: 100%;
     height: 100vh;
     background-image: url(assets/numeros-binarios.jpg); 
     opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
 }
 
 .bloco-criptografia {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8em; 
+    width: 60%;
 }
 
 .informacao {
     color: white;
     font-style: italic;
-    padding-left: 1em;
+    padding: 1em;
+}
+
+.text-area {
+    position: relative;
+    width: 100%;
 }
 
 .text-area span {
-    position: fixed;
+    position: absolute;
     left: 0;
     font-size: 1.8em;
     pointer-events: none;
     transition: 0.3s;
     opacity: .5;
-    padding-left: 3.6em;
+    padding-left: 0.8em;
     padding-top: 0.8em;
 }
 
@@ -74,7 +93,6 @@ body {
     background-color: #F3F5FC;
     border-radius: 24px;
     width: 100%;
-    height: 100%;
 }
 
 .botoes {
@@ -105,7 +123,6 @@ body {
     height: 4.187em;
     border: 1px solid #D8DFE8;
     border-radius: 24px;
-    padding: 0.625em;
     cursor: pointer;
     transition: background-color .3s ease;
 }
@@ -114,25 +131,16 @@ body {
     background-color: #AAB2D5;
 }
 
+
 .bloco-mensagem {
-    width: 45%;
-    display: block;
-    justify-content: center;
-    margin-right: 3.125em;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.75em;
+    width: 25%;
+    height: 600px;
     border-radius: 32px;
     background: #FFFFFF;
-}
-
-.msg-nao-encontrada {
-    margin-top: 4em;
-}
-
-.img-boneco {
-    width: 38.2vh;
-    height: 38vh;  
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nenhuma-msg-encontrada {
@@ -143,6 +151,7 @@ body {
 }
 
 .digite-msg {
+    margin-top: 0.5em;
     color: #343A40;
     font-size: 1em;
     text-align: center;
@@ -150,20 +159,17 @@ body {
 
 .contem-mensagem {
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .mensagemSaida {
-    padding: 6%;
+    width: 100%;
+    padding: 5%;
     outline: none;
     resize: none;
     color: #0A3871;
     border: none;
     border-radius: 24px;
-    background-color: white;
-    
+    background-color: white; 
 }
 
 .btn-copiar {
@@ -173,10 +179,9 @@ body {
     height: 4.187em;
     border: 1px solid;
     border-radius: 24px;
-    margin-bottom: 1vh;
+    margin: 7%;
     cursor: pointer;
     transition: background-color .3s ease;
-    margin-left: 2em;
 }
 
 .btn-copiar:hover {
@@ -184,7 +189,81 @@ body {
 }
 
 .rodape {
-    margin-top: 3%;
+    position: fixed; 
+    bottom: 0;
+    margin-bottom: 0.5em;
     text-align: center;
     color: white;
+}
+
+
+@media (max-width: 900px){
+
+    .logo-alura {
+        height: 3.5em;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        gap: 2.0em;
+        font-size: 0.8em;
+    }
+
+    .bloco-criptografia {
+        gap: 0.5em;
+        width: 100%;
+    }
+
+    .text-area span {
+        position: absolute;
+        padding-left: 1em;
+        padding-top: 0.5em;
+    }
+
+    .text-area textarea:focus ~ span,
+    .text-area textarea:valid ~ span {
+        transform: translate(2.54em, -2.535em);
+        font-size: 1.3rem;  
+    }
+
+    .mensagemEntrada {
+        padding: 1%;
+        padding-left: 0.8em;
+        padding-top: 0.8em;
+    }
+
+    .botoes {
+        gap: 0.5em;
+    }
+
+    .bloco-mensagem {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .msg-nao-encontrada {
+        margin: 0;
+    }
+
+    .img-boneco {
+        width: 70%;
+    }
+
+    .contem-mensagem {
+        width: 100%;
+        font-size: 1.3em;
+    }
+
+    .rodape {
+        font-size: 0.6em;
+    }
 }
